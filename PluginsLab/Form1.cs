@@ -21,7 +21,7 @@ namespace MainApp
         {
             get
             {
-                return (Bitmap)pictureBox1.Image;
+                return (Bitmap)pictureBox1.BackgroundImage;
             }
             set
             {
@@ -33,6 +33,7 @@ namespace MainApp
         {
             InitializeComponent();
             FindPlugins();
+            CreatePluginsMenu();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -84,6 +85,16 @@ namespace MainApp
         {
             Interface.IPlugin plugin = (Interface.IPlugin)plugins[((ToolStripMenuItem)sender).Text];
             plugin.Transform(this);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            //openFileDialog.ShowDialog();
+            //if (openFileDialog.CheckFileExists)
+            //{
+            //    pictureBox1.Image.S
+            //}
         }
     }
 }
